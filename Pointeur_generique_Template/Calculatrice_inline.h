@@ -22,6 +22,6 @@ public:
 		cout << "Soustraction   : " << soustraction() << endl;
 		cout << "Multiplication : " << multiplication() << endl;
 		cout << "Division       : " << division() << endl;
-		cout << "---------------------------" << endl;
+		
 	}
 };
