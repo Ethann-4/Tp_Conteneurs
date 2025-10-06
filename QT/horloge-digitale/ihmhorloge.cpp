@@ -18,20 +18,18 @@ IHMHorloge::IHMHorloge(QWidget *parent) : QWidget(parent)
     actionQuitter->setShortcut(QKeySequence(QKeySequence::Quit)); // Ctrl+Q
     addAction(actionQuitter);
 
-    // Layout
     QVBoxLayout *layoutPrincipal = new QVBoxLayout;
     layoutPrincipal->addWidget(horloge);
     layoutPrincipal->addWidget(editionHeure);
     layoutPrincipal->addWidget(boutonReglage);
     setLayout(layoutPrincipal);
 
-    // Connexions signaux/slots
+    // Connexions signaux
     connect(this, SIGNAL(depart(int)), horloge, SLOT(demarrer(int)));
     connect(this, SIGNAL(arret()), horloge, SLOT(arreter()));
     connect(boutonReglage, SIGNAL(clicked()), this, SLOT(regler()));
     connect(actionQuitter, SIGNAL(triggered()), this, SLOT(quitter()));
 
-    // Fenêtre
     setWindowTitle("Horloge digitale");
     setWindowFlags(Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint);
     setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -66,4 +64,5 @@ void IHMHorloge::quitter()
 {
     close();
 }
+
 
