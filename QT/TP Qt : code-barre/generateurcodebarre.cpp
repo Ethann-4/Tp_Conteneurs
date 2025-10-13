@@ -40,7 +40,7 @@ void GenerateurCodeBarre::paintEvent(QPaintEvent *)
     dessinerCode39(&painter, codeCourant);
 }
 
-// --- Fonction principale de dessin du code 39 ---
+// Fonction principale de dessin du code 39
 void GenerateurCodeBarre::dessinerCode39(QPainter *painter, const QString &code)
 {
     if (code.isEmpty())
@@ -99,3 +99,4 @@ void GenerateurCodeBarre::dessinerCode39(QPainter *painter, const QString &code)
     painter->setFont(font);
     painter->drawText(0, y + hauteur + 15, width(), 20, Qt::AlignCenter, code);
 }
+
