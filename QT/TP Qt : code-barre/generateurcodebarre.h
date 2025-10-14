@@ -13,12 +13,10 @@ class GenerateurCodeBarre : public QWidget
     Q_OBJECT
 
 public:
-    explicit GenerateurCodeBarre(QWidget *parent = nullptr);
+    explicit GenerateurCodeBarre(QWidget *parent = 0);
     void dessiner(const QString &code);
     void imprimer();
-
-protected:
-    void paintEvent(QPaintEvent *event) override;
+    void paintEvent(QPaintEvent *event) ;
 
 private:
     QString codeCourant;
